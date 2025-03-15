@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login Page</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
     <header class="header">
@@ -12,9 +12,9 @@
     </header>
 
     <div class="container">
-        <form action="login" method="post">
-            <input type="text" name="event_title" placeholder="Enter API Key" id="eventTitle" required>
-            <input type="submit" value="Login" style="width: 100px;">
+        <form>
+            <input type="text" name="event_title" placeholder="Enter API Key" id="apiKey" required>
+             <button class="loginBtn">Login</button>
         </form>
     </div>
     
@@ -25,12 +25,13 @@
             <li>Give it a Purpose name (e.g., "My App" or "Personal Script")</li>
             <li>(Optional) Set an expiration date if you want it to expire automatically</li>
             <li>Click “Generate Token”</li>
-            <li>Copy the token (API key) that appears — you won’t be able to see it again after you leave the page, so save it securely.</li>
+            <li>Copy the token (API key) that appears — you won't be able to see it again after you leave the page, so save it securely.</li>
         </ul>
         
         <div class="Canva">
             <a href="https://canvas.sfu.ca/profile/settings" target="_blank">Canvas</a>
         </div>
     </div>
+    <script src="JS/frontPage.js"></script>
 </body>
 </html>
