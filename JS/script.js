@@ -21,7 +21,7 @@ function loadAssignments(selectedCourseIds){
     }
 
     coursesToLoad.forEach(course=>{
-        fetch(`${canvasUrlInput}/api/v1/courses/${course.id}/assignments?access_token=${apiKey}`)
+        fetch(`https://${canvasUrlInput}/api/v1/courses/${course.id}/assignments?access_token=${apiKey}`)
             .then(response=>{
                 if(response.ok){
                     return response.json();
@@ -38,13 +38,18 @@ function loadAssignments(selectedCourseIds){
                 const taskBox = document.createElement('div');
                 const dueDateText = new Date(assignment.due_at).toLocaleString();
                 taskBox.textContent = `${assignment.name} (Due: ${dueDateText})`;
-                
+                taskArea.appendChild(taskBox);
             })
-        })  
+            if (!hasUpcoming) {
+                const taskBox = document.createElement('div');
+                taskBox.textContent = `Error loading assignments for course: ${course.name}`;
+                taskArea.appendChild(taskBox);
+            }
+        }) 
     })
 }
 
-fetch(`${canvasUrl}/api/v1/courses?access_token=${apiKey}`)
+fetch(`https://${canvasUrlInput}/api/v1/courses?access_token=${apiKey}`)
     .then(response=>{
         if(response.ok){
             return response.json();
@@ -85,7 +90,26 @@ fetch(`${canvasUrl}/api/v1/courses?access_token=${apiKey}`)
 
         controlsDiv.style.display = 'block';
         updateAssignments();
+        
 
+        const allCheckboxes = document.querySelectorAll('input[name="course"]');
+            allCheckboxes.forEach(checkbox => {
+                checkbox.addEventListener('change', function() {
+                if (this.value === "all" && this.checked) {
+                    // If "All Subjects" is checked, uncheck all others
+                    allCheckboxes.forEach(cb => {
+                    if (cb.value !== "all") {
+                        cb.checked = false;
+                    }
+                    });
+                } else if (this.value !== "all" && this.checked) {
+                    document.getElementById('all').checked = false;
+                } else if (!document.querySelector('input[name="course"]:checked')) {
+                    document.getElementById('all').checked = true;
+                }
+                updateAssignments();
+                });
+            });
     })
 function updateAssignments() {
     const checkedBoxes = document.querySelectorAll('input[name="course"]:checked');
