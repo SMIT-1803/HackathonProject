@@ -3,6 +3,13 @@
     padding: 0;
 }
 
+body {
+    background-color: #1E293B; /* Dark background for contrast */
+    color: white;
+    font-family: 'Poppins', sans-serif;
+    overflow-y: auto;
+}
+
 .navbar{
     width: 100%;
     background-color: red;
@@ -21,19 +28,42 @@
     justify-content: center;
     align-items: center;
     position: relative;
-    top: 40vmin;
+    top: 15vmin;
 }
 
-.taskArea{
+.taskArea {
     display: flex;
+    flex-direction: column;
     width: 100%;
+    padding: 20px;
+    box-sizing: border-box;
     border: 2px solid black;
     position: absolute;
-    bottom: 0px;
+    top: 30vh;
 }
 
-.aTask{
-    height: 200px;
-    width: 200px;
+#checkBoxContainer {
+    margin-bottom: 20px; /* Gap between checkboxes and tasks */
+}
+
+.checkbox-item {
+    margin-bottom: 10px; /* Vertical spacing between checkboxes */
+}
+
+#tasksContainer {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap; /* Allows tasks to wrap to the next line if needed */
+    gap: 20px; /* Good gap between tasks */
+    justify-content: center; /* Centers tasks horizontally */
+}
+
+.aTask {
+    width: 200px; /* Fixed width for consistency */
     border: 2px solid black;
+    padding: 10px;
+    box-sizing: border-box; /* Includes padding and border in width */
+    background-color: #f0f0f0; /* Light background for contrast */
+    color: black;
+    overflow: auto; /* Adds scrollbar if content overflows */
 }
