@@ -1,0 +1,39 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+.navbar{
+    width: 100%;
+    background-color: red;
+    display: flex;
+    position:relative;
+
+}
+.navbar ul li{
+    list-style-type:none;
+}
+
+.taskContainer{
+    display: flex;
+    width: 50vw;
+    margin: auto;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    top: 40vmin;
+}
+
+.taskArea{
+    display: flex;
+    width: 100%;
+    border: 2px solid black;
+    position: absolute;
+    bottom: 0px;
+}
+
+.aTask{
+    height: 200px;
+    width: 200px;
+    border: 2px solid black;
+}
