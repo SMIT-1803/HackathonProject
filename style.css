@@ -1,0 +1,110 @@
+body {
+    background-color: #2D1E5A; /* Deep Purple */
+    color: #F4F4F4; /* Off-White */
+    font-family: 'Poppins', sans-serif; 
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.header {
+    text-align: center;
+    padding: 3vh 0;
+}
+
+h1 {
+    color: #F4F4F4; /* Off-White */
+    font-size: 3vh;
+    font-weight: 600;
+}
+
+.container {
+    text-align: center;
+    margin-top: 2vh;
+}
+
+input[type="text"],
+input[type="submit"] {
+    margin: 1.5vh 0;      
+    padding: 1.5vh;        
+    width: 30vh;            
+    border: none;
+    border-radius: 2vh;
+    font-size: 1.8vh;
+    transition: all 0.3s ease-in-out;
+}
+
+input[type="text"] {
+    background-color: rgba(227, 178, 60, 0.2); /* Soft Gold */
+    color: #F4F4F4; /* Off-White */
+    border: 2px solid rgba(227, 178, 60, 0.5); /* Soft Gold */
+    outline: none;
+}
+
+input[type="text"]::placeholder {
+    color: rgba(227, 178, 60, 0.6); /* Soft Gold */
+}
+
+input[type="submit"] {
+    background-color: #C8963E; /* Gold */
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.2);
+}
+
+input[type="text"]:hover, 
+input[type="text"]:focus {
+    background-color: rgba(227, 178, 60, 0.3); /* Soft Gold */
+    border-color: #C8963E; /* Gold */
+}
+
+input[type="submit"]:hover {
+    background-color: #AD7A26; /* Hover Gold */
+    transform: scale(1.05);
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.3);
+}
+
+.boxA {
+    display: flex;
+    flex-direction: column; 
+    justify-content: center; 
+    align-items: center; 
+    width: 60vw;
+    background: rgba(255, 255, 255, 0.2);
+    color: #F4F4F4; /* Off-White */
+    border: 1px solid rgba(182, 182, 182, 0.5);
+    padding: 25px;
+    margin: 15px auto;
+    line-height: 1.7;
+    text-align: left;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 2vh;
+    border-radius: 10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.Canva {
+    display: inline-block;
+    color: #F4F4F4; /* Off-White */
+    background-color: #C8963E; /* Gold */
+    border-radius: 2vh;
+    cursor: pointer;
+    padding: 10px 20px;
+    transition: 0.4s ease-in-out;
+    box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.2);
+}
+
+.Canva a {
+    text-decoration: none;
+    color: white;
+}
+
+.Canva:hover {
+    transform: scale(1.1);
+    background-color: #AD7A26; /* Hover Gold */
+}
